@@ -1,0 +1,325 @@
+<html>
+  <head>
+    <style>
+      /*
+	CSS Seven-Segment Display Demo
+	http://velvetcache.org/2012/04/11/css-seven-segment-display-tutorial
+
+	- For Darcy -
+
+	Copyright 2012 John M. Hobbs
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+      body {
+				background: #111;
+				color: #FFF;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+			a { color: #FFF; }
+			#container {
+				width: 640px;
+				margin: 60px auto;
+			}
+.seven-segment {
+	position: relative;
+	height: 350px;
+	width: 200px;
+	display: inline-block;
+}
+
+.seven-segment .a {
+	position: absolute;
+	left: 10px;
+	height: 0;
+	width: 100px;
+	border-top: 30px solid #222;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+}
+.seven-segment .a.on {
+	border-top-color: #0083FF;
+}
+
+.seven-segment .b {
+	position: absolute;
+	left: 150px;
+	top: 10px;
+	height: 100px;
+	width: 0;
+	border-right: 30px solid #222;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+}
+.seven-segment .b.on {
+	border-right-color: #0083FF;
+}
+
+.seven-segment .c {
+	position: absolute;
+	left: 150px;
+	top: 180px;
+	height: 100px;
+	width: 0;
+	border-right: 30px solid #222;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+}
+.seven-segment .c.on {
+	border-right-color: #0083FF;
+}
+
+.seven-segment .d {
+	position: absolute;
+	top: 320px;
+	left: 10px;
+	height: 0;
+	width: 100px;
+	border-bottom: 30px solid #222;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+}
+.seven-segment .d.on {
+	border-bottom-color: #0083FF;
+}
+
+.seven-segment .e {
+	position: absolute;
+	left: 0;
+	top: 180px;
+	height: 100px;
+	width: 0;
+	border-left: 30px solid #222;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+}
+.seven-segment .e.on {
+	border-left-color: #0083FF;
+}
+
+.seven-segment .f {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	height: 100px;
+	width: 0;
+	border-left: 30px solid #222;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+}
+.seven-segment .f.on {
+	border-left-color: #0083FF;
+}
+
+.seven-segment .g {
+	position: absolute;
+	top: 162px;
+	left: 35px;
+	-webkit-transform: scale(1.4);
+	-moz-transform: scale(1.4);
+	-ms-transform: scale(1.4);
+	-o-transform: scale(1.4);
+	transform: scale(1.4);
+}
+.seven-segment .g .top {
+	height: 0;
+	width: 80px;
+	border-bottom: 15px solid #222;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+}
+.seven-segment .g .bottom {
+	height: 0;
+	width: 80px;
+	border-top: 15px solid #222;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+}
+.seven-segment .g.on .top {
+	border-bottom-color: #0083FF;
+}
+.seven-segment .g.on .bottom {
+	border-top-color: #0083FF;
+}
+    </style>
+  </head>
+  <body>
+    <div id="container">
+
+		<div class="seven-segment">
+			<div class="a"></div>
+			<div class="b"></div>
+			<div class="c"></div>
+			<div class="d"></div>
+			<div class="e"></div>
+			<div class="f"></div>
+			<div class="g">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+
+		<div class="seven-segment">
+			<div class="a"></div>
+			<div class="b"></div>
+			<div class="c"></div>
+			<div class="d"></div>
+			<div class="e"></div>
+			<div class="f"></div>
+			<div class="g">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+
+		<div class="seven-segment">
+			<div class="a"></div>
+			<div class="b"></div>
+			<div class="c"></div>
+			<div class="d"></div>
+			<div class="e"></div>
+			<div class="f"></div>
+			<div class="g">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
+    /*
+	CSS Seven-Segment Display Demo
+	http://velvetcache.org/2012/04/11/css-seven-segment-display-tutorial
+
+	- For Darcy -
+
+	Copyright 2012 John M. Hobbs
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+function SevenSegment ( object ) {
+
+	var $el = jQuery(object);
+
+	var pins = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ];
+
+	this.pinHigh = function ( pin ) {
+		$el.find( '.' + pins[pin] ).addClass( 'on' );
+	};
+
+	this.pinLow = function ( pin ) {
+		$el.find( '.' + pins[pin] ).removeClass( 'on' );
+	};
+
+	this.setPins = function ( bite ) {
+		for( var i = 0; i < pins.length; ++i ) {
+			var bit = Math.pow( 2, i );
+			if( ( bit & bite ) == bit ) {
+				this.pinHigh( i );
+			}
+			else {
+				this.pinLow( i );
+			}
+		}
+	};
+
+};
+
+var SevenSegmentCharMap = {
+	'0': 0x3F,
+	'1': 0x06,
+	'2': 0x5B,
+	'3': 0x4F,
+	'4': 0x66,
+	'5': 0x6D,
+	'6': 0x7D,
+	'7': 0x07,
+	'8': 0x7F,
+	'9': 0x6F,
+	'A': 0x77,
+	'a': 0x77,
+	'B': 0x7C,
+	'b': 0x7C,
+	'C': 0x39,
+	'c': 0x39,
+	'D': 0x5E,
+	'd': 0x5E,
+	'E': 0x79,
+	'e': 0x79,
+	'F': 0x71,
+	'f': 0x71
+};
+
+
+    var counter = 0;
+				var displays = [];
+				$('.seven-segment').each(function ( i, e ) {
+					displays[i] = new SevenSegment( e );
+				});
+
+				function redraw () {
+					// I feel like I'm missing some math here...
+					var strval = counter.toString();
+					displays[0].setPins( SevenSegmentCharMap[( counter > 99 ) ? strval.substr( -3, 1 ) : '0'] );
+					displays[1].setPins( SevenSegmentCharMap[( counter > 9 )  ? strval.substr( -2, 1 ) : '0'] );
+					displays[2].setPins( SevenSegmentCharMap[ones = strval.substr( -1, 1 )] );
+
+				}
+
+    // Please change this to a base URL for the Drupal site in question.
+    var baseUrl = 'http://example.com';
+    // This should respond to the polling.
+    var baseUrlPolling = 'http://poll.example.com:2000';
+
+    function poll() {
+      $.ajax({
+        url: baseUrlPolling + '/subscribe/newnode',
+        cache: false,
+        success: function(d, c, x) {
+          if (x.status === 204) {
+            console.log('no content');
+          }
+          else {
+            reQuery();
+          }
+          poll();
+        }
+      });
+    }
+    function reQuery(alsoPoll) {
+      $.ajax({
+        url: baseUrl  +'/node-rest',
+        cache: false,
+        success: function(d, c, a) {
+          counter = d.length;
+          redraw();
+          if (alsoPoll) {
+            poll();
+          }
+        },
+        complete: function(x, s) {
+          if (s == 'error') {
+            counter = 0;
+            redraw();
+            if (alsoPoll) {
+              poll();
+            }
+          }
+        }
+      });
+    }
+    reQuery(true);
+    </script>
+
+  </body>
+</html>
